@@ -26,9 +26,10 @@ In the `src` directory, edit the file `metadata.yml` with the book's title and y
 This is a [Pandoc metadata block](http://pandoc.org/MANUAL.html#metadata-blocks),
 so other data can be put in there as well.
 
-All of the files in `src` that end with the extension `.md` will be compiled into the final text.
-They'll be added in alphabetical order.
-To keep your text in order, it is recommended to prefix all of the files with numbers.
+All of the files in `src` that end with the extensions `.md` or `.txt`
+will be compiled into the final text.
+To keep your text in order, it is recommended to prefix all of the files with numbers,
+as they will be processed in alphabetical order.
 Other files will be excluded unless the build process includes them specifically.
 
 A common way to structure the text is to put each chapter in one file,
@@ -80,7 +81,10 @@ anything you want, really.
 The source directory.
 All of the files needed to assemble your book should live there.
 Other files (like notes) should be put somewhere else.
-Markdown files in this directory will be automatically included.
+Files in this directory matching your input extensions
+(`.md` and `.txt` by default)
+will be included automatically,
+and interpreted as Markdown files.
 Non-Markdown files will need to be included explicitly by editing the `Makefile`.
 
 - `src/000-chapter-1.md`, `src/001-writing-style.md`, etc.:

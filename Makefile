@@ -4,15 +4,16 @@ title = your-title-here
 # This is a list of all the formats you wish to publish to.
 formats = html pdf epub
 
-# Global Pandoc options, applied to every format.
-pandoc_options = --smart --table-of-contents --from markdown
-
 # Location of input files.
 source_dir = src
 # Location of output files.
 target_dir = dist
-# Markdown source files.
-markdown_extension = md
+# Extensions of source files to include.
+# Note that they will all be interpreted the same, however.
+input_extensions = md txt
+# Format of source files.
+# All input files will be interpreted with this format regardless of extension.
+input_format = markdown
 # Pandoc Metadata file.
 metadata_filename = metadata.yml
 # CSS stylesheet. Used only when outputting HTML format.
@@ -20,6 +21,9 @@ style_filename = style.css
 
 # The path to the pandoc executable on your system.
 pandoc = pandoc
+
+# Global Pandoc options, applied to every format.
+pandoc_options = --smart --table-of-contents --from $(input_format)
 
 # Options specific to individual formats.
 # The prefix must match the format exactly.
@@ -30,7 +34,7 @@ pdf_options = --variable documentclass=book
 ################################################################################
 
 base_output = $(target_dir)/$(title)
-source := $(sort $(wildcard $(source_dir)/*.$(markdown_extension)))
+source := $(sort $(wildcard $(addprefix $(source_dir)/*.,$(input_extensions))))
 metadata = $(source_dir)/$(metadata_filename)
 
 .SUFFIXES:
