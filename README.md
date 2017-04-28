@@ -58,11 +58,13 @@ you can always recover these instructions from the history.
 This file.
 Note that, like everything else in the top-level directory,
 it won't go into the finished book.
+
 - `LICENSE.md`:
 An assertion that this template is released under
 [Creative Commons Zero](https://wiki.creativecommons.org/wiki/CC0).
 You should delete this file,
 or replace it with one that describes the copyright status of your book.
+
 - `Makefile`:
 Where the magic happens.
 Recipes for generating the output files.
@@ -71,19 +73,23 @@ such as by adding options unique to a specific output format,
 adding or deleting new formats,
 changing the input format,
 anything you want, really.
--`src/`:
+
+- `src/`:
 The source directory.
 All of the files needed to assemble your book should live there.
 Other files (like notes) should be put somewhere else.
 Markdown files in this directory will be automatically included.
 Non-Markdown files will need to be included explicitly by editing the `Makefile`.
--`src/000-chapter-1.md`, `src/001-writing-style.md`, and `050-and-another-thing.md`:
+
+- `src/000-chapter-1.md`, `src/001-writing-style.md`, etc.:
 A self-describing example of how you might structure your text.
--`src/metadata.yml`:
+
+- `src/metadata.yml`:
 The place to put information about your book.
 The title, author, etc. will be inserted into the book from this file,
 so there's no need to put them explicitly in the Markdown.
--`src/style.css`:
+
+- `src/style.css`:
 If you intend to publish in `html` format,
 this file will describe the styles of the finished page.
 It will be embedded directly into the output file,
