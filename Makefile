@@ -40,18 +40,18 @@ pdf_options = --variable documentclass=book
 ################################################################################
 
 base_output = $(target_dir)/$(title)
+output_files = $(addprefix $(base_output).,$(formats))
 source := $(sort $(wildcard $(addprefix $(source_dir)/*.,$(input_extensions))))
 metadata = $(source_dir)/$(metadata_filename)
 
 .SUFFIXES:
-
 .PHONY: clean all $(formats) count
 
 all: $(formats)
 
 $(formats): %: $(base_output).%
 
-$(addprefix $(base_output).,$(formats)): $(base_output).%: $(wildcard $(source_dir)/*) | $(target_dir)
+$(output_files): $(base_output).%: $(wildcard $(source_dir)/*) | $(target_dir)
 	@$(pandoc) $(pandoc_options) $($*_options) -o $@ $(metadata) $(source)
 	@echo "Wrote $@"
 
