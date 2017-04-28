@@ -1,21 +1,27 @@
 # THE BOOK TEMPLATE MAKEFILE
 # Replace this with the base filename of your final output.
 title = your-title-here
+
 # This is a list of all the formats you wish to publish to.
 formats = html pdf epub
 
 # Location of input files.
 source_dir = src
+
 # Location of output files.
 target_dir = dist
+
 # Extensions of source files to include.
 # Note that they will all be interpreted the same, however.
 input_extensions = md txt
+
 # Format of source files.
 # All input files will be interpreted with this format regardless of extension.
 input_format = markdown
+
 # Pandoc Metadata file.
 metadata_filename = metadata.yml
+
 # CSS stylesheet. Used only when outputting HTML format.
 style_filename = style.css
 
