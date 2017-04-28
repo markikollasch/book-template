@@ -35,7 +35,7 @@ metadata = $(source_dir)/$(metadata_filename)
 
 .SUFFIXES:
 
-.PHONY: clean all $(formats)
+.PHONY: clean all $(formats) count
 
 all: $(formats)
 
@@ -50,3 +50,6 @@ $(target_dir):
 
 clean:
 	@rm -f $(wildcard $(target_dir)/*)
+
+count: $(source)
+	@$(pandoc) $^ --to plain | wc -w

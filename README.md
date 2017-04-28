@@ -44,6 +44,8 @@ Give them to your friends and victims.
 You can also build just one output format by specifying the format, e.g. `make pdf`.
 The command `make clean` will delete your output files, in case you wanted to do that.
 
+Display a word count with the command `make count`.
+
 It is preconfigured to output in `html`, `pdf`, and `epub` formats,
 but you can add others such as `docx` by editing the Makefile.
 
